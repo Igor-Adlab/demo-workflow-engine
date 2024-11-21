@@ -1,0 +1,30 @@
+name: Deno Tests and Coverage
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  test:
+    name: Run Deno Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - name: Lint
+        run: deno task lint
+
+      - name: Run Tests with Coverage
+        run: deno task test
+
+      - name: Generate Coverage Report
+        run: deno task coverage

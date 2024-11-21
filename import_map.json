@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "lodash": "https://esm.sh/lodash-es@4.17.21",
+    "@test/assert": "https://deno.land/std@0.224.0/assert/mod.ts",
+    "@test/mock": "https://deno.land/std@0.224.0/testing/mock.ts"
+  }
+}

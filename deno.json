@@ -1,0 +1,11 @@
+{
+  "unstable": ["cron"],
+  "importMap": "./import_map.json",
+  "tasks": {
+    "lint": "deno lint --ignore=\"./src/**/*.spec.ts,examples/**\"",
+    "test": "deno test --allow-read --allow-env --allow-net --allow-import ./src/**/*.spec.ts --coverage",
+    "coverage": "deno coverage --exclude=.spec.ts coverage",
+    "coverage:html": "deno coverage --html",
+    "serve:coverage": "npx serve coverage/html"
+  }
+}
