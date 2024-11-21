@@ -4,6 +4,7 @@ import type { CtxHelpersMap } from "./resolve-param.ts";
 export class JexlWrapper {
   constructor(
     private readonly template: TemplateStringsArray,
+    // deno-lint-ignore no-explicit-any
     private readonly args: any[]
   ) {}
 

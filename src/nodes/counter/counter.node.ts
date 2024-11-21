@@ -10,7 +10,7 @@ export interface ICounterNodeParams extends ParamsMap {
 }
 
 export class CounterNode extends Node<ICounterNodeParams> {
-  override execute(inputs: Result[], context: NodeExecutionContext) {
+  override execute(_inputs: Result[], context: NodeExecutionContext) {
     const counter = Number(this.param("counter", context) || 0);
     const increment = Number(this.param("increment", context) || 1);
 

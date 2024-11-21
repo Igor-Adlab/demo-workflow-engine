@@ -6,12 +6,13 @@ import { JexlWrapper } from "../../utils/jexl-expression.ts";
 import { type NodeExecutionContext } from "../../../src/core/execution-context.ts";
 
 interface IReplyNodeParams extends ParamsMap {
+  // deno-lint-ignore no-explicit-any
   body: string | JexlWrapper | Record<string, any>;
   contentType?: "text/json" | "text/html" | "text/plain";
 }
 
 export class ReplyWebhookNode extends Node<IReplyNodeParams> {
-  override async execute(inputs: Result[], context: NodeExecutionContext) {
+  override async execute(_inputs: Result[], context: NodeExecutionContext) {
     if (!(context instanceof WebhookNodeExecutionContext)) {
       throw new Error(`Can not reply to webhook: Wrong execution context`);
     }

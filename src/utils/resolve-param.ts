@@ -1,4 +1,4 @@
-import _, { isObject } from "lodash";
+import _ from "lodash";
 import type { IReadableExecutionContext } from "../types/execution-context.ts";
 import type { WorkflowParamValue } from "../types/node.ts";
 import { JexlWrapper } from "./jexl-expression.ts";
